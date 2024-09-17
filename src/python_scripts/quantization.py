@@ -8,12 +8,14 @@ def quantize_pixel(r, g, b, n=8, grayscale=False):
     return (quantize_color(r, n), quantize_color(g, n), quantize_color(b, n))
 
 def quantize_image(pixels, width, height, n=8, grayscale=False):
+    """ Basically, reduce the number of colors in the image to n """
     for x in range(width):
         for y in range(height):
             r, g, b = pixels[x, y][:3]
             pixels[x, y] = quantize_pixel(r, g, b, n, grayscale)
 
 def grayscale_image(pixels, width, height):
+    """ Convert the whole image to grayscale """
     for x in range(width):
         for y in range(height):
             r, g, b = pixels[x, y][:3]

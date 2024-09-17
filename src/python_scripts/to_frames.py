@@ -1,9 +1,8 @@
 # src/python_scripts/to_frames.py
-import os
 import cv2
 
 def to_frames(video, output_folder):
-    os.makedirs(output_folder, exist_ok=True)
+    """ Using OpenCV, extract frames from a video and save them as images """
     cap = cv2.VideoCapture(video)
     if not cap.isOpened():
         print(f"Error: Could not open video {video}")
